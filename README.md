@@ -1,27 +1,14 @@
 # streaming_assistants
 
-~The official OpenAI Assistants API does not yet support streaming (although this functionality has been hinted at since launch back in November). Streaming is critical for a large subset of genai use cases and there has been significant feedback that it's the major blocker for addption of the Assistants API from many. We decided that we (and our users) couldn't wait so we implemented streaming support in Astra Assistants API.~
+This library has been deprecated in favor of [astra-assistants](https://pypi.org/project/astra-assistants/) the repo has been moved in tree with the server code [here](https://github.com/datastax/astra-assistants-api/tree/main/client).
 
-OpenAI has now added streaming support with streaming runs. This libriary will now mainly be used to streamline support for third partry llm providers. We will continue to support our old streaming messages approach for existing users.
+The latest version of streaming-assistants (v0.19.0) now pull in astra-assistants as a dependency and leverages that code. To upgrade simply switch from using streaming_assistants to astra_assistants.
 
-# How to use    
+> from streaming_assistants import patch
 
-Install streaming_assistants using your python package manager of choice:
+to
 
-```
-poetry add streaming_assistants
-```
-
-
-import and patch your client:
-
-```
-from openai import OpenAI
-from streaming_assistants import patch
-
-client = patch(OpenAI())
-
-```
+> from astra_assistants import patch
 
 # Server
 
